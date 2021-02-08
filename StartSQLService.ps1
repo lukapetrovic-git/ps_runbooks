@@ -1,3 +1,3 @@
-Get-Service -Name 'MSSQLSERVER' -Computer Test |
+Get-Service -Name 'MSSQLSERVER' -Computer _computerName_ |
 ? { $_.Status -eq "Stopped" -and $_.StartType -eq "Auto" } | Start-Service 
-Get-Service -Name 'MSSQLSERVER' -Computer Test | format-table -AutoSize MachineName, ServiceName, DisplayName, Status, StartType 
+Get-Service -Name 'MSSQLSERVER' -Computer _computerName_ | format-table -AutoSize MachineName, ServiceName, DisplayName, Status, StartType 
